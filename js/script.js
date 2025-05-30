@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Typed.js for typewriter effect
     new Typed('#typed-text', {
-        strings: ['DevOps & Data Engineer', 'Cloud Solutions Architect'],
+        strings: ['DevOps & Data Engineer', 'Automation Engineer'],
         typeSpeed: 50,
         backSpeed: 30,
         loop: true
@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
     new Chart(document.getElementById('skills-chart'), {
         type: 'radar',
         data: {
-            labels: ['AWS', 'Azure', 'Terraform', 'Python', 'Ansible', 'Azure Data Factory', 'PySpark', 'Databricks', 'ELK Stack'],
+            labels: ['AWS', 'Azure', 'Terraform', 'Python', 'Ansible', 'Azure Data Factory', 'PySpark', 'Databricks', 'ELK Stack', 'DevOps'],
             datasets: [{
                 label: 'Skill Level',
-                data: [85, 90, 85, 80, 80, 75, 75, 70, 75],
+                data: [85, 90, 85, 80, 80, 75, 75, 70, 75, 70],
                 backgroundColor: 'rgba(212, 175, 55, 0.2)',
                 borderColor: '#d4af37',
                 borderWidth: 2,
