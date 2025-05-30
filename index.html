@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Srivastava - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="nav-brand">Yash Srivastava</div>
+            <ul class="nav-links flex space-x-6">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero min-h-screen flex items-center justify-center parallax relative">
+        <div id="particles-js" class="absolute inset-0 z-0"></div>
+        <div class="hero-content text-center mx-auto px-4 animate__animated animate__fadeIn relative z-10">
+            <svg class="circuit-overlay" viewBox="0 0 200 200">
+                <path d="M10,10H30 M30,10V30 M30,30H41 M41,30V50 M50,10H70 M70,10V30 M70,30H78 M78,30V50" fill="none" stroke="#d4af37" stroke-width="2"/>
+            </svg>
+            <img src="assets/profile.jpg" alt="Yash Srivastava" class="profile-img">
+            <h1>Yash Srivastava</h1>
+            <p><span id="typed-text"></span></p>
+            <a href="#contact" class="cta-button pulse">Get in Touch</a>
+            <a href="#about" class="scroll-indicator"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section py-16 animate__animated animate__fadeInUp">
+        <div class="container mx-auto px-4">
+            <h2>About Me</h2>
+            <p>I’m a DevOps and Data Engineer specializing in infrastructure automation, AI-based forecasting, and data pipeline orchestration. Proficient in Azure, AWS, Terraform, Azure Data Factory, PySpark, and Databricks, I deliver scalable, cost-efficient solutions to enhance system reliability and insights.</p>
+        </div>
+    </section>
+
+    <!-- Experience Section (Timeline) -->
+    <section id="experience" class="section py-16 animate__animated animate__fadeInUp">
+        <div class="container mx-auto px-4">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Analyst, Fareportal India Pvt Ltd</h3>
+                        <p class="date">Jul 2024 - Present</p>
+                        <ul>
+                            <li>Built disaster recovery infrastructure using Terraform, reducing failover time by 30%.</li>
+                            <li>Streamlined CI/CD with GitHub Actions, cutting deployment errors by 20%.</li>
+                            <li>Developed cloud cost dashboards, reducing overspending by 15%.</li>
+                            <li>Engineered ELK Stack log system, enhancing security detection by 25%.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Intern - Automation Engineer, Fareportal India Pvt Ltd</h3>
+                        <p class="date">Jan 2024 - Jun 2024</p>
+                        <ul>
+                            <li>Automated tasks with Python and Bash, saving 10+ hours weekly.</li>
+                            <li>Orchestrated network automation via Ansible, reducing manual work by 40%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section py-16 animate__animated animate__fadeInUp">
+        <div class="container mx-auto px-4">
+            <h2>Projects</h2>
+            <div class="project-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="devops">DevOps</button>
+                <button class="filter-btn" data-filter="data">Data Engineering</button>
+            </div>
+            <div class="project-grid">
+                <div class="project-card" data-category="devops">
+                    <i class="fas fa-cloud project-icon"></i>
+                    <h3>Disaster Recovery on Azure</h3>
+                    <p class="project-desc">Developed Terraform-based infrastructure for VNets, Load Balancers, and ASR, reducing failover time by 30%. <em>Source code available upon request.</em></p>
+                </div>
+                <div class="project-card" data-category="data">
+                    <i class="fas fa-chart-line project-icon"></i>
+                    <h3>AI-Based VM Capacity Forecasting</h3>
+                    <p class="project-desc">Built forecasting models with Prometheus data, improving resource utilization by 10%. <em>Source code available upon request.</em></p>
+                </div>
+                <div class="project-card" data-category="data">
+                    <i class="fas fa-tachometer-alt project-icon"></i>
+                    <h3>Cloud Cost and Event Dashboards</h3>
+                    <p class="project-desc">Created real-time monitoring dashboards with Azure Monitor and Grafana, reducing overspending by 15%. <em>Source code available upon request.</em></p>
+                </div>
+                <div class="project-card" data-category="devops">
+                    <i class="fas fa-network-wired project-icon"></i>
+                    <h3>Network Automation with Ansible</h3>
+                    <p class="project-desc">Automated network configurations using Ansible, reducing manual effort by 40%. <em>Source code available upon request.</em></p>
+                </div>
+                <div class="project-card" data-category="data">
+                    <i class="fas fa-database project-icon"></i>
+                    <h3>Data Pipeline with Azure Data Factory</h3>
+                    <p class="project-desc">Designed a data pipeline using Azure Data Factory and PySpark on Databricks, streamlining data processing for analytics. <em>Source code available upon request.</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section py-16 animate__animated animate__fadeInUp">
+        <div class="container mx-auto px-4">
+            <h2>Skills</h2>
+            <canvas id="skills-chart" width="400" height="400"></canvas>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section py-16 animate__animated animate__fadeInUp">
+        <div class="container mx-auto px-4">
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/yash-srivastava-506983201/" target="_blank" rel="noopener" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/YashSrivastava20bcs4443" target="_blank" rel="noopener" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
