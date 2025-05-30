@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             labels: ['AWS', 'Azure', 'Terraform', 'Python', 'Ansible', 'Azure Data Factory', 'PySpark', 'Databricks', 'ELK Stack', 'DevOps'],
             datasets: [{
                 label: 'Skill Level',
-                data: [85, 90, 85, 80, 80, 75, 75, 70, 75, 70],
+                data: [85, 90, 80, 90, 80, 75, 75, 70, 75, 70],
                 backgroundColor: 'rgba(212, 175, 55, 0.2)',
                 borderColor: '#d4af37',
                 borderWidth: 2,
