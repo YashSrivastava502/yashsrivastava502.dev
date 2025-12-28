@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <!-- Navigation -->
     <nav class="navbar sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -35,7 +36,8 @@
             <svg class="circuit-overlay" viewBox="0 0 200 200">
                 <path d="M10,10H30 M30,10V30 M30,30H41 M41,30V50 M50,10H70 M70,10V30 M70,30H78 M78,30V50" fill="none" stroke="#d4af37" stroke-width="2"/>
             </svg>
-            <img src="assets/profile.jpg" alt="Yash Srivastava" class="profile-img">
+            <img src="assets/profile.jpg" alt="Yash Srivastava" class="profile-img" onerror="this.style.display='none';document.querySelector('.profile-placeholder').style.display='flex'">
+            <div class="profile-placeholder" style="display:none">YS</div>
             <h1>Yash Srivastava</h1>
             <p><span id="typed-text"></span></p>
             <a href="#contact" class="cta-button pulse">Get in Touch</a>
@@ -44,10 +46,29 @@
     </header>
 
     <!-- About Section -->
+    <main id="main">
     <section id="about" class="section py-16 animate__animated animate__fadeInUp">
         <div class="container mx-auto px-4">
             <h2>About Me</h2>
-            <p>I’m a DevOps and Data Engineer specializing in infrastructure automation, AI-based forecasting, and data pipeline orchestration. Proficient in Azure, AWS, Terraform, Azure Data Factory, PySpark, and Databricks, I deliver scalable, cost-efficient solutions to enhance system reliability and insights.</p>
+            <div class="about-grid">
+                <div class="about-copy">
+                    <p class="lead">I am a Cloud & Automation Engineer in the System Engineering team. I deliver infrastructure-as-code and automation that increase reliability, reduce operational toil, and optimize cloud costs. I collaborate with monitoring and data teams to provide centralized observability, provision analytics-ready infrastructure, and ship production-ready dashboards and automation workflows.</p>
+
+                    <ul class="about-list">
+                        <li><strong>Infrastructure as Code</strong> — Terraform, ARM templates</li>
+                        <li><strong>Cloud Platforms</strong> — Azure, AWS</li>
+                        <li><strong>Automation & SRE</strong> — Python, Ansible, GitHub Actions, runbooks</li>
+                        <li><strong>Data & Observability</strong> — Azure Data Factory, PySpark, Databricks, ELK, Prometheus, Grafana</li>
+                        <li><strong>Networking</strong> — DNS, network automation and configuration management</li>
+                    </ul>
+                </div>
+
+                <aside class="about-card" aria-label="Summary and contact">
+                    <h3>What I Do</h3>
+                    <p>Create automated, production-ready cloud platforms and operational tooling that scale with business needs.</p>
+                    <a class="cta-button" href="#contact">Get in touch</a>
+                </aside>
+            </div>
         </div>
     </section>
 
@@ -58,24 +79,51 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Analyst, Fareportal India Pvt Ltd</h3>
-                        <p class="date">Jul 2024 - Present</p>
-                        <ul>
-                            <li>Built disaster recovery infrastructure using Terraform, reducing failover time by 30%.</li>
-                            <li>Streamlined CI/CD with GitHub Actions, cutting deployment errors by 20%.</li>
-                            <li>Developed cloud cost dashboards, reducing overspending by 15%.</li>
-                            <li>Engineered ELK Stack log system, enhancing security detection by 25%.</li>
+                        <header class="timeline-header">
+                            <div>
+                                <div class="role">Cloud Automation Engineer</div>
+                                <div class="company">Fareportal India Pvt Ltd</div>
+                            </div>
+                            <div class="date-pill">Jul 2024 &ndash; Present</div>
+                        </header>
+
+                        <ul class="timeline-list">
+                            <li>Developed infrastructure-as-code for Azure and AWS with Terraform and GitHub Actions to standardize and automate deployments.</li>
+                            <li>Established SRE practices—tuned alerts, authored runbooks, and implemented incident-response playbooks—to reduce MTTR.</li>
+                            <li>Built cost-management dashboards and tagging policies to measure and control cloud spend.</li>
+                            <li>Centralized observability with ELK and Grafana; integrated telemetry sources and automated alerting and remediation.</li>
+                            <li>Partnered with data teams to provision, harden, and monitor analytics databases and to implement backup and recovery processes.</li>
                         </ul>
+
+                        <div class="tags">
+                            <span class="tag">Terraform</span>
+                            <span class="tag">Azure</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">SRE</span>
+                            <span class="tag">Observability</span>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Intern - Automation Engineer, Fareportal India Pvt Ltd</h3>
-                        <p class="date">Jan 2024 - Jun 2024</p>
-                        <ul>
-                            <li>Automated tasks with Python and Bash, saving 10+ hours weekly.</li>
-                            <li>Orchestrated network automation via Ansible, reducing manual work by 40%.</li>
+                        <header class="timeline-header">
+                            <div>
+                                <div class="role">Intern — Automation Engineer</div>
+                                <div class="company">Fareportal India Pvt Ltd</div>
+                            </div>
+                            <div class="date-pill">Jan 2024 &ndash; Jun 2024</div>
+                        </header>
+
+                        <ul class="timeline-list">
+                            <li>Automated operational tasks using Python and Bash to reduce manual effort and improve consistency.</li>
+                            <li>Created Ansible playbooks for network device configuration and DNS management to reduce deployment errors.</li>
                         </ul>
+
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Ansible</span>
+                            <span class="tag">Networking</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,12 +143,17 @@
                 <div class="project-card" data-category="devops">
                     <i class="fas fa-cloud project-icon"></i>
                     <h3>Disaster Recovery on Azure</h3>
-                    <p class="project-desc">Developed Terraform-based infrastructure for VNets, Load Balancers, and ASR, reducing failover time by 30%. <em>Source code available upon request.</em></p>
+                    <p class="project-desc">Designed and implemented Terraform-based disaster recovery infrastructure (VNets, load balancers, replication) to reduce failover time and improve resilience. <em>Source available upon request.</em></p>
                 </div>
                 <div class="project-card" data-category="data">
                     <i class="fas fa-chart-line project-icon"></i>
                     <h3>AI-Based VM Capacity Forecasting</h3>
-                    <p class="project-desc">Built forecasting models with Prometheus data, improving resource utilization by 10%. <em>Source code available upon request.</em></p>
+                    <p class="project-desc">Developed forecasting models using Prometheus telemetry to predict VM capacity needs, leading to improved resource utilization and cost savings. <em>Details available upon request.</em></p>
+                </div>
+                <div class="project-card" data-category="devops">
+                    <i class="fas fa-tools project-icon"></i>
+                    <h3>SRE Tooling & Automation</h3>
+                    <p class="project-desc">Built operational tooling including automated runbooks, remediation scripts and alerting playbooks to streamline incident response and reduce manual toil. <em>Details available on request.</em></p>
                 </div>
                 <div class="project-card" data-category="data">
                     <i class="fas fa-tachometer-alt project-icon"></i>
@@ -110,12 +163,22 @@
                 <div class="project-card" data-category="devops">
                     <i class="fas fa-network-wired project-icon"></i>
                     <h3>Network Automation with Ansible</h3>
-                    <p class="project-desc">Automated network configurations using Ansible, reducing manual effort by 40%. <em>Source code available upon request.</em></p>
+                    <p class="project-desc">Automated network and DNS configurations using Ansible to ensure consistency and speed up deployments while reducing configuration drift. <em>Source available on request.</em></p>
                 </div>
                 <div class="project-card" data-category="data">
                     <i class="fas fa-database project-icon"></i>
                     <h3>Data Pipeline with Azure Data Factory</h3>
-                    <p class="project-desc">Designed a data pipeline using Azure Data Factory and PySpark on Databricks, streamlining data processing for analytics. <em>Source code available upon request.</em></p>
+                    <p class="project-desc">Designed and implemented ETL pipelines using Azure Data Factory and PySpark on Databricks to enable reliable analytics workflows and data ingestion. <em>Source available on request.</em></p>
+                </div>
+                <div class="project-card" data-category="devops">
+                    <i class="fas fa-eye project-icon"></i>
+                    <h3>Monitoring Integration & Observability</h3>
+                    <p class="project-desc">Spearheaded integration of Prometheus, Grafana and complementary telemetry tools into a consolidated observability platform with automated alerting, dashboards and runbooks to improve operational visibility.</p>
+                </div>
+                <div class="project-card" data-category="data">
+                    <i class="fas fa-server project-icon"></i>
+                    <h3>Database Server Provisioning (SRE)</h3>
+                    <p class="project-desc">Provisioned and hardened database servers for analytics workloads, implemented backup and monitoring strategies, and automated operational tasks to ensure high availability and reliability.</p>
                 </div>
             </div>
         </div>
@@ -125,7 +188,38 @@
     <section id="skills" class="section py-16 animate__animated animate__fadeInUp">
         <div class="container mx-auto px-4">
             <h2>Skills</h2>
-            <canvas id="skills-chart" width="400" height="400"></canvas>
+            <div class="skills-grid">
+                <div class="skills-left">
+                    <canvas id="skills-chart" width="400" height="400"></canvas>
+                </div>
+                <div class="skills-right">
+                    <div class="skill-item" data-value="90">
+                        <div class="skill-title">Azure</div>
+                        <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                        <div class="skill-percent">90%</div>
+                    </div>
+                    <div class="skill-item" data-value="85">
+                        <div class="skill-title">AWS</div>
+                        <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                        <div class="skill-percent">85%</div>
+                    </div>
+                    <div class="skill-item" data-value="88">
+                        <div class="skill-title">Terraform</div>
+                        <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                        <div class="skill-percent">88%</div>
+                    </div>
+                    <div class="skill-item" data-value="92">
+                        <div class="skill-title">Python</div>
+                        <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                        <div class="skill-percent">92%</div>
+                    </div>
+                    <div class="skill-item" data-value="80">
+                        <div class="skill-title">Ansible</div>
+                        <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                        <div class="skill-percent">80%</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -133,18 +227,30 @@
     <section id="contact" class="section py-16 animate__animated animate__fadeInUp">
         <div class="container mx-auto px-4">
             <h2>Contact</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Your Message" required></textarea>
+            <form id="contact-form" role="form" aria-labelledby="contact-heading" action="https://formspree.io/f/xaqyjraa" method="POST" data-use-formspree="true">
+                <h3 id="contact-heading" class="sr-only">Contact form</h3>
+                <input type="hidden" name="_subject" value="Portfolio contact submission">
+                <input type="hidden" name="_captcha" value="false">
+                <label class="sr-only" for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" placeholder="Name" required>
+
+                <label class="sr-only" for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" placeholder="Email" required>
+
+                <label class="sr-only" for="contact-message">Your message</label>
+                <textarea id="contact-message" name="message" placeholder="Your Message" required></textarea>
+
                 <button type="submit">Send</button>
             </form>
+            <div id="contact-form-message" class="form-alert" role="status" aria-live="polite" style="display:none;margin-top:12px;padding:12px;border-radius:8px;"></div>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/yash-srivastava-506983201/" target="_blank" rel="noopener" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/YashSrivastava502" target="_blank" rel="noopener" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </section>
+
+    </main>
 
     <script src="js/script.js"></script>
 </body>
